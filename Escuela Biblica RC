@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Escuela Bíblica 2026 | Rescue Church</title>
+  <meta name="description" content="Calendario de clases de la Escuela Bíblica 2026 - Rescue Church Miami (Febrero a Abril)">
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.12);
+      --accent: #f6c35d;
+      --accent2:#7dd3fc;
+      --danger:#fb7185;
+      --ok:#34d399;
+      --shadow: 0 20px 45px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(246,195,93,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 25%, rgba(125,211,252,.14), transparent 55%),
+        radial-gradient(900px 600px at 35% 95%, rgba(52,211,153,.10), transparent 60%),
+        var(--bg);
+      color: var(--text);
+    }
+    a{color:inherit}
+    .wrap{max-width:1020px;margin:0 auto;padding:26px 16px 60px}
+    header{
+      padding:22px 18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    header:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 240px at 20% 0%, rgba(246,195,93,.20), transparent 60%);
+      pointer-events:none;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+      color: var(--muted);
+      background: rgba(255,255,255,.06);
+      padding:8px 10px; border:1px solid var(--line);
+      border-radius: 999px;
+    }
+    .kicker .dot{
+      width:8px; height:8px; border-radius:999px; background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(246,195,93,.18);
+    }
+    h1{
+      margin:14px 0 8px;
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+    .meta{
+      margin-top:14px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill strong{color: var(--text); font-weight:600}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 880px){
+      .grid{grid-template-columns: 1fr}
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .cardHead h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.02em;
+    }
+    .badge{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.05);
+      white-space:nowrap;
+    }
+    .content{padding:14px 16px}
+    .month{
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: rgba(255,255,255,.78);
+      display:flex; align-items:center; gap:10px;
+    }
+    .month:before{
+      content:"";
+      height:10px; width:10px; border-radius:999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(125,211,252,.14);
+    }
+    .list{display:flex; flex-direction:column; gap:10px}
+    .row{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .date{
+      min-width:86px;
+      font-weight:700;
+      color: var(--text);
+    }
+    .info{flex:1}
+    .title{
+      font-weight:700;
+      margin:0 0 4px;
+      color: var(--text);
+    }
+    .by{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .off{
+      border-color: rgba(251,113,133,.35);
+      background: rgba(251,113,133,.08);
+    }
+    .off .title{color: rgba(255,255,255,.95)}
+    .tagOff{
+      display:inline-flex;
+      margin-left:auto;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border: 1px solid rgba(251,113,133,.35);
+      color: rgba(255,255,255,.85);
+      background: rgba(251,113,133,.10);
+      white-space:nowrap;
+    }
+
+    .notice{
+      border:1px solid rgba(251,113,133,.35);
+      background: rgba(251,113,133,.08);
+      border-radius: var(--radius);
+      padding:14px 16px;
+      color: rgba(255,255,255,.88);
+    }
+    .notice h3{margin:0 0 6px; font-size: 15px}
+    .notice p{margin:0; color: var(--muted); line-height:1.45}
+    .sideBlock{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding:14px 16px;
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size: 15px;
+    }
+    .mini ul{
+      margin:0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height:1.55;
+      font-size: 14px;
+    }
+    footer{
+      margin-top:18px;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      text-align:center;
+    }
+    .divider{
+      height:1px; background: var(--line);
+      margin:16px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="kicker"><span class="dot"></span> Rescue Church Miami</div>
+      <h1>Escuela Bíblica 2026</h1>
+      <p class="sub">Calendario de clases (Febrero – Abril). Formación bíblica para crecer en Cristo y servir con excelencia.</p>
+
+      <div class="meta">
+        <div class="pill">📍 <strong>Rescue Church</strong> · Miami</div>
+        <div class="pill">📅 <strong>Feb–Abr 2026</strong></div>
+        <div class="pill">🚫 Sin clase: <strong>16 Feb</strong> y <strong>16 Mar</strong></div>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- MAIN SCHEDULE -->
+      <section class="card">
+        <div class="cardHead">
+          <h2>Agenda de Clases</h2>
+          <span class="badge">Actualizado: 2026</span>
+        </div>
+
+        <div class="content">
+
+          <div class="month">Febrero</div>
+          <div class="list">
+            <div class="row">
+              <div class="date">02/02/26</div>
+              <div class="info">
+                <p class="title">Clase Especial de Apertura</p>
+                <p class="by">Con Pr. Jimmy y Pra. Joana</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">02/09/26</div>
+              <div class="info">
+                <p class="title">Clase #1 — Vida guiada por el Espíritu Santo</p>
+                <p class="by">Con Pr. Eduardo</p>
+              </div>
+            </div>
+
+            <div class="row off">
+              <div class="date">02/16/26</div>
+              <div class="info">
+                <p class="title">No hay clase</p>
+                <p class="by">Descanso / Receso</p>
+              </div>
+              <div class="tagOff">🚫 SIN CLASE</div>
+            </div>
+
+            <div class="row">
+              <div class="date">02/23/26</div>
+              <div class="info">
+                <p class="title">Clase #2 — Los dones espirituales para servir</p>
+                <p class="by">Con Malu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="month">Marzo</div>
+          <div class="list">
+            <div class="row">
+              <div class="date">03/01/26</div>
+              <div class="info">
+                <p class="title">Clase #3 — 7 maravillosos atributos de Dios I</p>
+                <p class="by">Con Pr. José Carlos</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">03/09/26</div>
+              <div class="info">
+                <p class="title">Clase #4 — 7 maravillosos atributos de Dios II</p>
+                <p class="by">Con Pr. José Carlos</p>
+              </div>
+            </div>
+
+            <div class="row off">
+              <div class="date">03/16/26</div>
+              <div class="info">
+                <p class="title">No hay clase</p>
+                <p class="by">Descanso / Receso</p>
+              </div>
+              <div class="tagOff">🚫 SIN CLASE</div>
+            </div>
+
+            <div class="row">
+              <div class="date">03/23/26</div>
+              <div class="info">
+                <p class="title">Clase #5 — Investidos de poder y autoridad</p>
+                <p class="by">Con Pr. Eduardo</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">03/30/26</div>
+              <div class="info">
+                <p class="title">Clase Especial</p>
+                <p class="by">Con Pr. Eliezer Taveras</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="month">Abril</div>
+          <div class="list">
+            <div class="row">
+              <div class="date">04/06/26</div>
+              <div class="info">
+                <p class="title">Clase #6 — El Padre busca verdaderos adoradores</p>
+                <p class="by">Con Malu</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">04/13/26</div>
+              <div class="info">
+                <p class="title">Clase #7 — El poder de la gracia de Dios</p>
+                <p class="by">Con Pr. Eduardo</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">04/20/26</div>
+              <div class="info">
+                <p class="title">Clase #8 — El principio de la honra</p>
+                <p class="by">Con Pr. José Carlos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="notice">
+            <h3>📌 Nota importante</h3>
+            <p>No habrá clase los días <strong>16 de febrero</strong> y <strong>16 de marzo</strong>.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SIDE INFO -->
+      <aside class="sideBlock">
+        <div class="mini">
+          <h3>✅ ¿Qué traer?</h3>
+          <ul>
+            <li>Biblia (física o app)</li>
+            <li>Cuaderno y lápiz</li>
+            <li>Corazón dispuesto a aprender</li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>📣 Recomendación</h3>
+          <ul>
+            <li>Llegar 10 minutos antes</li>
+            <li>Invita a un amigo</li>
+            <li>Si faltas, pide el resumen</li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>📍 Rescue Church</h3>
+          <ul>
+            <li>Escuela Bíblica 2026</li>
+            <li>Febrero – Abril</li>
+            <li>Miami</li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer>
+      © 2026 Rescue Church Miami · Escuela Bíblica · “Creciendo en la Palabra”
+    </footer>
+
+  </div>
+</body>
+</html>
