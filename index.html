@@ -2,256 +2,414 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Escuela Bíblica | Rescue Church (Español)</title>
-  <meta name="description" content="Agenda, clases y materiales de la Escuela Bíblica - Rescue Church (Español)." />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Escuela Bíblica 2026 | Rescue Church</title>
+  <meta name="description" content="Calendario de clases de la Escuela Bíblica 2026 - Rescue Church Miami (Febrero a Abril)">
 
   <style>
     :root{
       --bg: #0b1220;
-      --bg2:#0f1a30;
-      --card:#101a2e;
-      --card2:#0f172a;
-      --text:#e8eefc;
-      --muted:#b9c6e6;
-      --accent:#7dd3fc;   /* celeste */
-      --accent2:#a7f3d0;  /* verde suave */
-      --danger:#fca5a5;   /* rosado suave */
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.12);
+      --accent: #f6c35d;
+      --accent2:#7dd3fc;
+      --danger:#fb7185;
+      --ok:#34d399;
+      --shadow: 0 20px 45px rgba(0,0,0,.35);
+      --radius: 18px;
     }
-
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(246,195,93,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 25%, rgba(125,211,252,.14), transparent 55%),
+        radial-gradient(900px 600px at 35% 95%, rgba(52,211,153,.10), transparent 60%),
+        var(--bg);
       color: var(--text);
-      background: radial-gradient(1200px 600px at 20% 0%, #16325a 0%, var(--bg) 40%, #070b14 100%);
-      line-height: 1.5;
     }
-
-    a{ color: inherit; text-decoration: none; }
-    .container{ width: min(1100px, 92%); margin: 0 auto; }
-
-    /* NAV */
-    .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(7, 11, 20, .75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      padding: 12px 0;
-      gap: 14px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight: 800;
-      letter-spacing: .4px;
-    }
-    .brand-badge{
-      width:34px; height:34px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), #60a5fa);
-      box-shadow: var(--shadow);
-    }
-    .nav-links{
-      display:flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .nav-links a{
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-    }
-    .nav-links a:hover{
-      border-color: var(--border);
-      color: var(--text);
-      background: rgba(255,255,255,.04);
-    }
-
-    /* HERO */
-    .hero{
-      padding: 56px 0 28px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 24px;
-      align-items: start;
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.08;
-    }
-    .hero p{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 60ch;
-    }
-    .hero-cards{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 10px 12px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .cta-row{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight: 700;
-      font-size: 14px;
-    }
-    .btn:hover{ background: rgba(255,255,255,.10); }
-    .btn-primary{
-      background: linear-gradient(135deg, var(--accent), #60a5fa);
-      border-color: transparent;
-      color: #06101f;
-    }
-    .btn-primary:hover{ filter: brightness(1.05); }
-
-    .card{
-      background: rgba(16, 26, 46, .72);
-      border: 1px solid var(--border);
+    a{color:inherit}
+    .wrap{max-width:1020px;margin:0 auto;padding:26px 16px 60px}
+    header{
+      padding:22px 18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
-    .card-body{ padding: 16px; }
-
-    /* SECTIONS */
-    section{ padding: 24px 0; }
-    .section-title{
-      font-size: 20px;
-      margin: 0 0 12px;
+    header:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 240px at 20% 0%, rgba(246,195,93,.20), transparent 60%);
+      pointer-events:none;
     }
-    .muted{ color: var(--muted); }
-
-    /* INFO GRID */
-    .info-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .info-item h3{
-      margin: 0 0 6px;
-      font-size: 15px;
-    }
-    .info-item p{
-      margin: 0;
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px; letter-spacing:.08em; text-transform:uppercase;
       color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* AGENDA */
-    .agenda-wrap{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    .agenda-note{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 8px 10px;
+      background: rgba(255,255,255,.06);
+      padding:8px 10px; border:1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid var(--border);
+    }
+    .kicker .dot{
+      width:8px; height:8px; border-radius:999px; background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(246,195,93,.18);
+    }
+    h1{
+      margin:14px 0 8px;
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+    .meta{
+      margin-top:14px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill strong{color: var(--text); font-weight:600}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 880px){
+      .grid{grid-template-columns: 1fr}
+    }
+    .card{
+      border:1px solid var(--line);
       background: rgba(255,255,255,.05);
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .tag.special{
-      border-color: rgba(125,211,252,.55);
-      background: rgba(125,211,252,.12);
-      color: var(--text);
-    }
-    .tag.off{
-      border-color: rgba(252,165,165,.55);
-      background: rgba(252,165,165,.12);
-      color: var(--text);
-    }
-
-    table{
-      width:100%;
-      border-collapse: collapse;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       overflow:hidden;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(15, 23, 42, .55);
     }
-    thead th{
-      text-align:left;
-      padding: 12px 12px;
-      font-size: 13px;
+    .cardHead{
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .cardHead h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.02em;
+    }
+    .badge{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
       color: var(--muted);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      white-space:nowrap;
+    }
+    .content{padding:14px 16px}
+    .month{
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: rgba(255,255,255,.78);
+      display:flex; align-items:center; gap:10px;
+    }
+    .month:before{
+      content:"";
+      height:10px; width:10px; border-radius:999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(125,211,252,.14);
+    }
+    .list{display:flex; flex-direction:column; gap:10px}
+    .row{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--line);
       background: rgba(255,255,255,.04);
     }
-    tbody td{
-      padding: 12px 12px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      vertical-align: top;
-      font-size: 14px;
-    }
-    tbody tr:hover{ background: rgba(255,255,255,.03); }
-    .col-date{ width: 20%; }
-    .col-type{ width: 20%; }
-    .badge{
-      display:inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
+    .date{
+      min-width:86px;
+      font-weight:700;
       color: var(--text);
     }
-    .badge-regular{ }
-    .badge-special{
-      background: rgba(125,211,252,.14);
-      border-color: rgba(125,211,252,.55);
+    .info{flex:1}
+    .title{
+      font-weight:700;
+      margin:0 0 4px;
+      color: var(--text);
     }
-    .badge-off{
-      background: rgba(252,165,165,.14);
+    .by{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .off{
+      border-color: rgba(251,113,133,.35);
+      background: rgba(251,113,133,.08);
+    }
+    .off .title{color: rgba(255,255,255,.95)}
+    .tagOff{
+      display:inline-flex;
+      margin-left:auto;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border: 1px solid rgba(251,113,133,.35);
+      color: rgba(255,255,255,.85);
+      background: rgba(251,113,133,.10);
+      white-space:nowrap;
+    }
+
+    .notice{
+      border:1px solid rgba(251,113,133,.35);
+      background: rgba(251,113,133,.08);
+      border-radius: var(--radius);
+      padding:14px 16px;
+      color: rgba(255,255,255,.88);
+    }
+    .notice h3{margin:0 0 6px; font-size: 15px}
+    .notice p{margin:0; color: var(--muted); line-height:1.45}
+    .sideBlock{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding:14px 16px;
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size: 15px;
+    }
+    .mini ul{
+      margin:0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height:1.55;
+      font-size: 14px;
+    }
+    footer{
+      margin-top:18px;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      text-align:center;
+    }
+    .divider{
+      height:1px; background: var(--line);
+      margin:16px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="kicker"><span class="dot"></span> Rescue Church Miami</div>
+      <h1>Escuela Bíblica 2026</h1>
+      <p class="sub">Calendario de clases (Febrero – Abril). Formación bíblica para crecer en Cristo y servir con excelencia.</p>
+
+      <div class="meta">
+        <div class="pill">📍 <strong>Rescue Church</strong> · Miami</div>
+        <div class="pill">📅 <strong>Feb–Abr 2026</strong></div>
+        <!-- ✅ ATUALIZADO: agora o OFF é 16 Feb e 30 Mar -->
+        <div class="pill">🚫 Sin clase: <strong>16 Feb</strong> y <strong>30 Mar</strong></div>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- MAIN SCHEDULE -->
+      <section class="card">
+        <div class="cardHead">
+          <h2>Agenda de Clases</h2>
+          <span class="badge">Actualizado: 2026</span>
+        </div>
+
+        <div class="content">
+
+          <div class="month">Febrero</div>
+          <div class="list">
+            <div class="row">
+              <div class="date">02/02/26</div>
+              <div class="info">
+                <p class="title">Clase Especial de Apertura</p>
+                <p class="by">Con Pr. Jimmy y Pra. Joana</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">02/09/26</div>
+              <div class="info">
+                <p class="title">Clase #1 — Vida guiada por el Espíritu Santo</p>
+                <p class="by">Con Pr. Eduardo</p>
+              </div>
+            </div>
+
+            <div class="row off">
+              <div class="date">02/16/26</div>
+              <div class="info">
+                <p class="title">No hay clase</p>
+                <p class="by">Descanso / Receso</p>
+              </div>
+              <div class="tagOff">🚫 SIN CLASE</div>
+            </div>
+
+            <div class="row">
+              <div class="date">02/23/26</div>
+              <div class="info">
+                <p class="title">Clase #2 — Los dones espirituales para servir</p>
+                <p class="by">Con Malu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="month">Marzo</div>
+          <div class="list">
+            <div class="row">
+              <div class="date">03/01/26</div>
+              <div class="info">
+                <p class="title">Clase #3 — 7 maravillosos atributos de Dios I</p>
+                <p class="by">Con Pr. José Carlos</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">03/09/26</div>
+              <div class="info">
+                <p class="title">Clase #4 — 7 maravillosos atributos de Dios II</p>
+                <p class="by">Con Pr. José Carlos</p>
+              </div>
+            </div>
+
+            <!-- ✅ 16/03 agora é a CLASE ESPECIAL com Pr. Eliezer Taveras -->
+            <div class="row">
+              <div class="date">03/16/26</div>
+              <div class="info">
+                <p class="title">Clase Especial</p>
+                <p class="by">Con Pr. Eliezer Taveras</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">03/23/26</div>
+              <div class="info">
+                <p class="title">Clase #5 — Investidos de poder y autoridad</p>
+                <p class="by">Con Pr. Eduardo</p>
+              </div>
+            </div>
+
+            <!-- ✅ 30/03 agora é OFF -->
+            <div class="row off">
+              <div class="date">03/30/26</div>
+              <div class="info">
+                <p class="title">No hay clase</p>
+                <p class="by">Descanso / Receso</p>
+              </div>
+              <div class="tagOff">🚫 SIN CLASE</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="month">Abril</div>
+          <div class="list">
+            <div class="row">
+              <div class="date">04/06/26</div>
+              <div class="info">
+                <p class="title">Clase #6 — El Padre busca verdaderos adoradores</p>
+                <p class="by">Con Malu</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">04/13/26</div>
+              <div class="info">
+                <p class="title">Clase #7 — El poder de la gracia de Dios</p>
+                <p class="by">Con Pr. Eduardo</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="date">04/20/26</div>
+              <div class="info">
+                <p class="title">Clase #8 — El principio de la honra</p>
+                <p class="by">Con Pr. José Carlos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- ✅ NOTA ATUALIZADA -->
+          <div class="notice">
+            <h3>📌 Nota importante</h3>
+            <p>No habrá clase los días <strong>16 de febrero</strong> y <strong>30 de marzo</strong>.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SIDE INFO -->
+      <aside class="sideBlock">
+        <div class="mini">
+          <h3>✅ ¿Qué traer?</h3>
+          <ul>
+            <li>Biblia (física o app)</li>
+            <li>Cuaderno y lápiz</li>
+            <li>Corazón dispuesto a aprender</li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>📣 Recomendación</h3>
+          <ul>
+            <li>Llegar 10 minutos antes</li>
+            <li>Invita a un amigo</li>
+            <li>Si faltas, pide el resumen</li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>📍 Rescue Church</h3>
+          <ul>
+            <li>Escuela Bíblica 2026</li>
+            <li>Febrero – Abril</li>
+            <li>Miami</li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer>
+      © 2026 Rescue Church Miami · Escuela Bíblica · “Creciendo en la Palabra”
+    </footer>
+
+  </div>
+</body>
+</html>
 
